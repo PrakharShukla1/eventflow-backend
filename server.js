@@ -14,7 +14,12 @@ dotenv.config();
 const app = express();
 
 // ── Middleware ────────────────────────────────────────────────
-app.use(cors()); // Allow cross-origin requests (frontend <-> backend)
+
+
+app.use(cors({
+  origin: "*",
+  credentials: true
+}));
 app.use(express.json()); // Parse incoming JSON request bodies
 
 // ── Routes ───────────────────────────────────────────────────
